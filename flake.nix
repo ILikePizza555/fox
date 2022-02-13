@@ -19,7 +19,12 @@
           version = "0.0.1";
           src = ./.;
           buildInputs = [
-            rust-package.default.toolchain
+            (rust-package.stable.withComponents [ 
+              "cargo"
+              "rustc"
+              "rustfmt"
+              "rust-src"
+            ])
             rust-package.rust-analyzer
           ];
         };
